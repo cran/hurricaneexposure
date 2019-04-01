@@ -1,10 +1,13 @@
-## ----echo = FALSE, message = FALSE---------------------------------------
+## ----echo = FALSE--------------------------------------------------------
 hasData <- requireNamespace("hurricaneexposuredata", quietly=TRUE)
 if (!hasData) {
     knitr::opts_chunk$set(eval = FALSE)
-    print(paste("Note: Examples in this vignette require that the `hurricaneexposuredata` package",
-                "be installed. The system currently running this vignette does not have that package",
-                "installed, so code examples will not be evaluated."))
+    msg <- paste("Note: Examples in this vignette require that the", 
+                 "`hurricaneexposuredata` package be installed. The system",
+                 "currently running this vignette does not have that package",
+                 "installed, so code examples will not be evaluated.")
+    msg <- paste(strwrap(msg), collapse="\n")
+    message(msg)
 }
 
 ## ----echo = FALSE, message = FALSE, warning = FALSE----------------------
@@ -131,7 +134,7 @@ county_events(counties = "51710", start_year = 1996, end_year = 2015,
               event_type = "flood")
 
 ## ----warning = FALSE-----------------------------------------------------
-communities <- data.frame(commun = c(rep("ny", 6), "no", "new"),
+communities <- data.frame(community_name = c(rep("ny", 6), "no", "new"),
                          fips = c("36005", "36047", "36061",
                                   "36085", "36081", "36119",
                                   "22071", "51700"))

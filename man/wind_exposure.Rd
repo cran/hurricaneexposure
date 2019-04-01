@@ -4,8 +4,8 @@
 \alias{wind_exposure}
 \title{Write storm wind exposure files}
 \usage{
-wind_exposure(locations, start_year, end_year, wind_limit, wind_var, out_dir,
-  out_type = "csv")
+wind_exposure(locations, start_year, end_year, wind_limit, wind_var,
+  out_dir, out_type = "csv")
 }
 \arguments{
 \item{locations}{Either a vector of FIPS county codes, for county-level
@@ -59,6 +59,9 @@ This function allows you to use different wind variables (sustained winds, which
 # on installing the required data package.
 if (requireNamespace("hurricaneexposuredata", quietly = TRUE)) {
 
+# You will need a directory named "tmp" in your home directory to
+# run these examples.
+
 # By county
 wind_exposure(locations = c("22071", "51700"),
               start_year = 1988, end_year = 2005,
@@ -66,7 +69,7 @@ wind_exposure(locations = c("22071", "51700"),
               out_dir = "~/tmp/storms")
 
 # For multi-county communities
-communities <- data.frame(commun = c(rep("ny", 6), "no", "new"),
+communities <- data.frame(community_name = c(rep("ny", 6), "no", "new"),
                           fips = c("36005", "36047", "36061",
                           "36085", "36081", "36119",
                           "22071", "51700"))
@@ -77,4 +80,3 @@ wind_exposure(locations = communities,
 }
 }
 }
-

@@ -4,8 +4,8 @@
 \alias{multi_county_rain}
 \title{Hurricane exposure by rain for communities}
 \usage{
-multi_county_rain(communities, start_year, end_year, rain_limit, dist_limit,
-  days_included = c(-2, -1, 0, 1))
+multi_county_rain(communities, start_year, end_year, rain_limit,
+  dist_limit, days_included = c(-2, -1, 0, 1))
 }
 \arguments{
 \item{communities}{A dataframe with the FIPS codes for all counties within
@@ -84,7 +84,7 @@ included in the rainfall measurement.
 # on installing the required data package.
 if (requireNamespace("hurricaneexposuredata", quietly = TRUE)) {
 
-communities <- data.frame(commun = c(rep("ny", 6), "no", "new"),
+communities <- data.frame(community_name = c(rep("ny", 6), "no", "new"),
                          fips = c("36005", "36047", "36061",
                                   "36085", "36081", "36119",
                                   "22071", "51700"))
@@ -107,4 +107,3 @@ Rui H, Mocko D, 2014. README Document for North America Land Data
 Assimilation System Phase 2 (NLDAS-2) Products. Goddard Earth Sciences
 Data and Information Services Center.
 }
-

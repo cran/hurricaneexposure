@@ -22,5 +22,5 @@ map.
 }
 \examples{
 default_map()
-}
 
+}
