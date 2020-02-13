@@ -4,8 +4,14 @@
 \alias{events_exposure}
 \title{Write storm events exposure files}
 \usage{
-events_exposure(locations, start_year, end_year, event_type, out_dir,
-  out_type = "csv")
+events_exposure(
+  locations,
+  start_year,
+  end_year,
+  event_type,
+  out_dir,
+  out_type = "csv"
+)
 }
 \arguments{
 \item{locations}{Either a vector of FIPS county codes, for county-level
@@ -19,7 +25,7 @@ See the examples for the proper format for this argument.}
 
 \item{event_type}{Character string with the type of event to use to identify
 county exposures. Options include \code{"flood"}, \code{"tornado"},
-\code{"wind"}, and \code{"tropical storm"}.}
+\code{"wind"}, and \code{"tropical_storm"}.}
 
 \item{out_dir}{Character string with the filepath to the directory where the
 data will be saved}
